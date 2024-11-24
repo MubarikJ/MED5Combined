@@ -25,21 +25,4 @@ public class Fireball : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Check if the fireball collided with the boss
-        if (collision.gameObject.CompareTag("Boss"))
-        {
-            // Insert logic for dealing damage to the boss here
-            Debug.Log("Fireball hit the boss!");
-
-            // Destroy the fireball on collision
-            Destroy(gameObject);
-        }
-        else
-        {
-            // Fireball disappears when hitting any other object (optional)
-            Destroy(gameObject);
-        }
-    }
 }
