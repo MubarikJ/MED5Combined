@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FireballDamage : MonoBehaviour
 {
-    public float damageAmount = 100f; // Damage dealt by the fireball
+    public float damageAmount = 10f; // Damage dealt by the fireball
 
     void OnCollisionEnter(Collision collision)
     {
@@ -20,11 +20,6 @@ public class FireballDamage : MonoBehaviour
 
 
         }
-        void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("Fireball collided with: " + collision.gameObject.name);
-        }
-
 
     }
 }
