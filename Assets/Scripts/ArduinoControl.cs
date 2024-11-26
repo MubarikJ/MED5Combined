@@ -3,7 +3,7 @@ using System.IO.Ports;
 
 public class ArduinoControl : MonoBehaviour
 {
-    public string portName = "COM3"; // Replace with the actual COM port for Arduino
+    public string portName = "COM8"; // Replace with the actual COM port for Arduino
     private SerialPort arduino;
 
     void Start()
