@@ -27,7 +27,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "b0f21192-aa9d-4e7a-b204-af6185edbff8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -54,6 +54,15 @@
                     "name": "Grab",
                     "type": "Button",
                     "id": "9e09c96d-e2d6-4ea9-9ba2-1ba5d5c361bd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Chop",
+                    "type": "Button",
+                    "id": "c1bac9d3-f93b-41ac-a8cf-4362f0b1b9ab",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -311,6 +320,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07ca488d-a2d6-45c3-81b5-5743e51a976d",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98cee9f9-44bd-4c8b-a2a1-c880ee77501e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Chop",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
