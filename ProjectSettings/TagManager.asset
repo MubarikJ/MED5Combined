@@ -8,7 +8,6 @@ TagManager:
   - BossAttack
   - Player1
   - Anchor
-  - Ingot
   layers:
   - Default
   - TransparentFX
