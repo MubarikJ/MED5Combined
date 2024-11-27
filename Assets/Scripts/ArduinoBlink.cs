@@ -19,10 +19,20 @@ public class ArduinoBlink : MonoBehaviour
         // Check if the collided object has the tag "TEST"
         if (collision.gameObject.CompareTag("BossAttackWind"))
         {
-            SendToArduino("180"); // Send the MOVE command to Arduino
+            SendToArduino("MOVE"); // Send the MOVE command to Arduino
+            Debug.Log("Collision with TEST detected. Servo moving to 180 degrees.");
+        }
+
+
+        if (collision.gameObject.CompareTag("BossAttack"))
+        {
+            SendToArduino("MOVEF"); // Send the MOVE command to Arduino
             Debug.Log("Collision with TEST detected. Servo moving to 180 degrees.");
         }
     }
+
+
+
 
     void SendToArduino(string message)
     {

@@ -4856,11 +4856,11 @@ GameObject:
   - component: {fileID: -8675572840588483784}
   m_Layer: 4
   m_Name: Boss_Orb_Wind
-  m_TagString: BossAttack
+  m_TagString: BossAttackWind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2087412301266482701
 Transform:
   m_ObjectHideFlags: 0

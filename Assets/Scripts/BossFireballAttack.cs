@@ -1,23 +1,27 @@
 using UnityEngine;
-using System.Collections;
 
 public class BossFireballAttack : MonoBehaviour
 {
-    public GameObject fireballPrefab;   // Fireball prefab to spawn
+    public GameObject fireballPrefab;    // Fireball prefab to spawn
     public Transform fireballSpawnPoint; // Where the fireball spawns (e.g., dragon's mouth)
-    public float fireballSpeed = 15f;  // Speed of the fireball
+    public float fireballSpeed = 15f;   // Speed of the fireball
     public float fireballCooldown = 3f; // Time between fireball attacks
-    public Transform player;           // Reference to the player's Transform
+    public Transform player;            // Reference to the player's Transform
+    public float attackRange = 20f;     // Distance within which the boss can attack
 
-    private float nextFireTime = 0f;
+    private float nextFireTime = 5f;
 
     void Update()
     {
-        // Check if it's time to fire
-        if (Time.time >= nextFireTime)
+        // Check if the player is within range
+        if (player != null && Vector3.Distance(transform.position, player.position) <= attackRange)
         {
-            ShootFireball(); // Call the shooting logic
-            nextFireTime = Time.time + fireballCooldown;
+            // Check if it's time to fire
+            if (Time.time >= nextFireTime)
+            {
+                ShootFireball(); // Call the shooting logic
+                nextFireTime = Time.time + fireballCooldown;
+            }
         }
     }
 
@@ -52,7 +56,7 @@ public class BossFireballAttack : MonoBehaviour
             if (rb != null)
             {
                 // Slightly adjust the direction for each fireball
-                Vector3 direction = Quaternion.Euler(0, i * 15, 0) * fireballSpawnPoint.forward;
+                Vector3 direction = Quaternion.Euler(0, i * 40, 0) * fireballSpawnPoint.forward;
                 rb.velocity = direction * fireballSpeed;
             }
         }
