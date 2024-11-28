@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died!");
-        StartCoroutine(RestartSceneAfterDelay(2.0f)); // Delay of 2 seconds
+        StartCoroutine(RestartSceneAfterDelay(8.0f)); // Delay of 2 seconds
     }
 
     private IEnumerator RestartSceneAfterDelay(float delay)
@@ -46,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void RestartScene()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        string BlackSmith = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(BlackSmith);
     }
 }

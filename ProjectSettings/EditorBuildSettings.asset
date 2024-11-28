@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Intro_Video_Scene.unity
+    path: Assets/Scenes/Intro_Video_Scene.unity
     guid: 3c7a728e6aae8bf4ea46ee1708cd2efa
   - enabled: 1
-    path: Assets/BlackSmith.unity
+    path: Assets/Scenes/BlackSmith.unity
     guid: 63ab98a5bbc4681498fd38f010d669e4
   - enabled: 1
-    path: Assets/Boss_Lair.unity
+    path: Assets/Scenes/Boss_Lair.unity
     guid: bf138e5b2fd91cf418ef51e523df83d5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}

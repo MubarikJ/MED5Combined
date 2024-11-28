@@ -7,32 +7,23 @@ public class ArduinoBlink : MonoBehaviour
 
     void Start()
     {
-        if (!arduinoPort.IsOpen)
-        {
-            arduinoPort.Open();     // Open the serial port
-            arduinoPort.DtrEnable = true; // Ensures a stable connection
-        }
+        OpenSerialPort();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object has the tag "TEST"
-        if (collision.gameObject.CompareTag("BossAttackWind"))
+        if (other.CompareTag("BossAttackWind"))
         {
             SendToArduino("MOVE"); // Send the MOVE command to Arduino
-            Debug.Log("Collision with TEST detected. Servo moving to 180 degrees.");
+            Debug.Log("Collision with BossAttackWind detected. Servo moving to 180 degrees.");
         }
 
-
-        if (collision.gameObject.CompareTag("BossAttack"))
+        if (other.CompareTag("BossAttack"))
         {
-            SendToArduino("MOVEF"); // Send the MOVE command to Arduino
-            Debug.Log("Collision with TEST detected. Servo moving to 180 degrees.");
+            SendToArduino("MOVEF"); // Send the MOVEF command to Arduino
+            Debug.Log("Collision with BossAttack detected. Servo moving to 180 degrees.");
         }
     }
-
-
-
 
     void SendToArduino(string message)
     {
@@ -40,13 +31,52 @@ public class ArduinoBlink : MonoBehaviour
         {
             arduinoPort.WriteLine(message); // Send the message to Arduino
         }
+        else
+        {
+            Debug.LogWarning("Attempted to send data, but the serial port is closed.");
+        }
+    }
+
+    void OpenSerialPort()
+    {
+        if (!arduinoPort.IsOpen)
+        {
+            try
+            {
+                arduinoPort.Open();
+                arduinoPort.DtrEnable = true; // Ensures a stable connection
+                Debug.Log("Serial port opened successfully.");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to open serial port: " + e.Message);
+            }
+        }
     }
 
     private void OnApplicationQuit()
     {
+        CloseSerialPort();
+    }
+
+    private void OnDisable()
+    {
+        CloseSerialPort();
+    }
+
+    void CloseSerialPort()
+    {
         if (arduinoPort.IsOpen)
         {
-            arduinoPort.Close(); // Close the serial port when exiting
+            try
+            {
+                arduinoPort.Close();
+                Debug.Log("Serial port closed successfully.");
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError("Failed to close serial port: " + e.Message);
+            }
         }
     }
 }
