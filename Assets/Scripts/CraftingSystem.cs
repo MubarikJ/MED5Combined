@@ -30,13 +30,13 @@ public class CraftingSystem : MonoBehaviour
 
     void CheckCrafting()
     {
-        if (ingotCount == 2)
+        if (ingotCount == 5)
         {
             // Spawn a dagger
             Instantiate(daggerPrefab, spawnPoint.position, Quaternion.identity);
             ResetCrafting();
         }
-        else if (ingotCount == 3)
+        else if (ingotCount == 6)
         {
             // Spawn a sword
             Instantiate(swordPrefab, spawnPoint.position, Quaternion.identity);

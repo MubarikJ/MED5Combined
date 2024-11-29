@@ -21,7 +21,7 @@ public class VideoSceneTransition : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene in build order
+        SceneManager.LoadScene(nextSceneName); // Load the next scene in build order
     }
 
 
